@@ -110,6 +110,7 @@ public class PermissionServiceImpl implements PermissionService {
 
     /**
      * 刷新 RoleMenu 本地缓存
+     * 除了用JAVA Reflection 来测试私有方法外，还可以用 @VisibleForTesting 测试私有方法
      */
     @VisibleForTesting
     void initLocalCacheForRoleMenu() {

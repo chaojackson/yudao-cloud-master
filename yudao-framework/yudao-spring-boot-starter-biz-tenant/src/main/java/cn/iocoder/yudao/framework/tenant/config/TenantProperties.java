@@ -30,7 +30,7 @@ public class TenantProperties {
      *
      * 默认情况下，每个请求需要带上 tenant-id 的请求头。但是，部分请求是无需带上的，例如说短信回调、支付回调等 Open API！
      */
-    private Set<String> ignoreUrls = Collections.emptySet();
+    private Set<String> ignoreUrls = Collections.emptySet();/* Collections.emptySet() 就是有些时候，需要一个集合，只是需要一个集合而已，我不会修改这个集合，但是又需要它有集合的相关属性。*/
 
     /**
      * 需要忽略多租户的表

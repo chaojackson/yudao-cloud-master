@@ -54,7 +54,9 @@ import static java.util.Collections.singleton;
 @Validated
 @Slf4j
 public class TenantServiceImpl implements TenantService {
-
+    /**@SuppressWarnings
+     *  注解是jse提供的注解。作用是屏蔽一些无关紧要的警告。使开发者能看到一些他们真正关心的警告。从而提高开发者的效率
+     * **/
     @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
     @Autowired(required = false) // 由于 yudao.tenant.enable 配置项，可以关闭多租户的功能，所以这里只能不强制注入
     private TenantProperties tenantProperties;
