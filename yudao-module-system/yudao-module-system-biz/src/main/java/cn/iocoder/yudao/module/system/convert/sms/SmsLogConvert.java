@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 短信日志 Convert
  *
- * @author 芋道源码
+ * @author zyc
  */
 @Mapper
 public interface SmsLogConvert {

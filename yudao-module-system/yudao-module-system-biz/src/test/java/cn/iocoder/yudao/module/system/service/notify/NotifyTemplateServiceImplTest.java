@@ -30,7 +30,7 @@ import static org.mockito.Mockito.verify;
 /**
 * {@link NotifyTemplateServiceImpl} 的单元测试类
 *
-* @author 芋道源码
+* @author zyc
 */
 @Import(NotifyTemplateServiceImpl.class)
 public class NotifyTemplateServiceImplTest extends BaseDbUnitTest {

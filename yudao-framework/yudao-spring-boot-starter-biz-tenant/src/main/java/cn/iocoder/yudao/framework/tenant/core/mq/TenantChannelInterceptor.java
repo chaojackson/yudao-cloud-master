@@ -14,7 +14,7 @@ import static cn.iocoder.yudao.framework.web.core.util.WebFrameworkUtils.HEADER_
  * 多租户的 {@link ChannelInterceptor} 实现类
  * 发送消息时，设置租户编号到 Header 上
  *
- * @author 芋道源码
+ * @author zyc
  */
 public class TenantChannelInterceptor implements ChannelInterceptor {
 

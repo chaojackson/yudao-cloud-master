@@ -32,7 +32,7 @@ import static org.mockito.Mockito.verify;
 /**
 * {@link MailTemplateServiceImpl} 的单元测试类
 *
-* @author 芋道源码
+* @author zyc
 */
 @Import(MailTemplateServiceImpl.class)
 public class MailTemplateServiceImplTest extends BaseDbUnitTest {

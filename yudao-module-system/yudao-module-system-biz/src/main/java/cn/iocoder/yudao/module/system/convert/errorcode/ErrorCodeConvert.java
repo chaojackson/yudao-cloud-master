@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * 错误码 Convert
  *
- * @author 芋道源码
+ * @author zyc
  */
 @Mapper
 public interface ErrorCodeConvert {

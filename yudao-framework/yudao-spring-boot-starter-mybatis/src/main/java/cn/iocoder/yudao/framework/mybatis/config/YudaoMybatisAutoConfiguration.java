@@ -22,7 +22,7 @@ import org.springframework.core.env.ConfigurableEnvironment;
 /**
  * MyBaits 配置类
  *
- * @author 芋道源码
+ * @author zyc
  */
 @AutoConfiguration
 @MapperScan(value = "${yudao.info.base-package}", annotationClass = Mapper.class,

@@ -7,7 +7,7 @@ import java.util.function.Supplier;
 /**
  * 多租户 Util
  *
- * @author 芋道源码
+ * @author zyc
  */
 public class TenantUtils {
 

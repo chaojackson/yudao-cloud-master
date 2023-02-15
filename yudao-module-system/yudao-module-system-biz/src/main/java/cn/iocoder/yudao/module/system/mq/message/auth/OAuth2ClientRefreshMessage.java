@@ -7,7 +7,7 @@ import org.springframework.cloud.bus.event.RemoteApplicationEvent;
 /**
  * OAuth 2.0 客户端的数据刷新 Message
  *
- * @author 芋道源码
+ * @author zyc
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

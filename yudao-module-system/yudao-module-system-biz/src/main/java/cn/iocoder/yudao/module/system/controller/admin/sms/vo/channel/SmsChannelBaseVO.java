@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @Data
 public class SmsChannelBaseVO {
 
-    @ApiModelProperty(value = "短信签名", required = true, example = "芋道源码")
+    @ApiModelProperty(value = "短信签名", required = true, example = "zyc")
     @NotNull(message = "短信签名不能为空")
     private String signature;
 

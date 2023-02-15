@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 /**
  * 支付通知 Response DTO
  *
- * @author 芋道源码
+ * @author zyc
  */
 @Data
 @Builder

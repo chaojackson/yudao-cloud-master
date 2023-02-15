@@ -17,7 +17,7 @@ import static cn.iocoder.yudao.framework.common.util.collection.SetUtils.asSet;
 /**
  * 岗位 Service 接口
  *
- * @author 芋道源码
+ * @author zyc
  */
 public interface PostService {
 

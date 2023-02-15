@@ -40,7 +40,7 @@ import static org.mockito.Mockito.when;
 /**
  * {@link BpmTaskAssignRuleService} 的单元测试
  *
- * @author 芋道源码
+ * @author zyc
  */
 @Import({BpmTaskAssignRuleServiceImpl.class, BpmTaskAssignStartUserScript.class}) // Import 引入 BpmTaskAssignStartUserScript 目的是保证不报错
 public class BpmTaskAssignRuleServiceImplTest extends BaseDbUnitTest {

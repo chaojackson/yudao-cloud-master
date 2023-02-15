@@ -28,7 +28,7 @@ import static springfox.documentation.builders.RequestHandlerSelectors.basePacka
 /**
  * Swagger2 自动配置类
  *
- * @author 芋道源码
+ * @author zyc
  */
 @AutoConfiguration
 @EnableSwagger2WebMvc

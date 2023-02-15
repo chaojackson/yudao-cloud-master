@@ -12,7 +12,7 @@ import static cn.iocoder.yudao.framework.web.core.util.WebFrameworkUtils.HEADER_
  * 多租户 FunctionAroundWrapper 实现类
  * 消费消息时，设置租户编号到 Context 上
  *
- * @author 芋道源码
+ * @author zyc
  */
 public class TenantFunctionAroundWrapper extends FunctionAroundWrapper {
 

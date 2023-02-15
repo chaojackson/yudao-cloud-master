@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 /**
  * 社交平台的类型枚举
  *
- * @author 芋道源码
+ * @author zyc
  */
 @Getter
 @AllArgsConstructor

@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * 文件配置 Convert
  *
- * @author 芋道源码
+ * @author zyc
  */
 @Mapper
 public interface FileConfigConvert {

@@ -5,7 +5,7 @@ import org.springframework.cloud.bus.event.RemoteApplicationEvent;
 /**
  * 菜单数据刷新 Message
  *
- * @author 芋道源码
+ * @author zyc
  */
 public class MenuRefreshMessage extends RemoteApplicationEvent {
 

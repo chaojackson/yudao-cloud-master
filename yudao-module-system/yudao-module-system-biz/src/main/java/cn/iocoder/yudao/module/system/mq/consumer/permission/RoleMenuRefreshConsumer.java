@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 /**
  * 针对 {@link RoleMenuRefreshMessage} 的消费者
  *
- * @author 芋道源码
+ * @author zyc
  */
 @Component
 @Slf4j

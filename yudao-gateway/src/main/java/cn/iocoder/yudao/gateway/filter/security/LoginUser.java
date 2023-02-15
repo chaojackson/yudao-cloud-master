@@ -9,7 +9,7 @@ import java.util.List;
  *
  * copy from yudao-spring-boot-starter-security 的 LoginUser 类
  *
- * @author 芋道源码
+ * @author zyc
  */
 @Data
 public class LoginUser {

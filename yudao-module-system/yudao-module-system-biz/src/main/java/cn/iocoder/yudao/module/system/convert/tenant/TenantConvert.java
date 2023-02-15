@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 租户 Convert
  *
- * @author 芋道源码
+ * @author zyc
  */
 @Mapper
 public interface TenantConvert {

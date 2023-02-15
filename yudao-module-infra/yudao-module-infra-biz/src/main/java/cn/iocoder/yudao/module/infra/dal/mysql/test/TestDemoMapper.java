@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * 字典类型 Mapper
  *
- * @author 芋道源码
+ * @author zyc
  */
 @Mapper
 public interface TestDemoMapper extends BaseMapperX<TestDemoDO> {

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * Role 角色相关消息的 Producer
  *
- * @author 芋道源码
+ * @author zyc
  */
 @Component
 public class RoleProducer extends AbstractBusProducer {

@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * 部门 Service 接口
  *
- * @author 芋道源码
+ * @author zyc
  */
 public interface DeptService {
 

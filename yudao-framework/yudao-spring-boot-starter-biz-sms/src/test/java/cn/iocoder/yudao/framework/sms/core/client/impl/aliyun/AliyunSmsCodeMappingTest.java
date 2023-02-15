@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * {@link AliyunSmsCodeMapping} 的单元测试
  *
- * @author 芋道源码
+ * @author zyc
  */
 public class AliyunSmsCodeMappingTest extends BaseMockitoUnitTest {
 

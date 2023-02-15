@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * 字典类型 Convert
  *
- * @author 芋道源码
+ * @author zyc
  */
 @Mapper
 public interface TestDemoConvert {

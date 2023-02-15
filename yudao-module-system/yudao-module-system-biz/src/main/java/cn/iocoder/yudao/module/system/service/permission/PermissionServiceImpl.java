@@ -46,7 +46,7 @@ import static java.util.Collections.singleton;
 /**
  * 权限 Service 实现类
  *
- * @author 芋道源码
+ * @author zyc
  */
 @Service
 @Slf4j
@@ -149,6 +149,14 @@ public class PermissionServiceImpl implements PermissionService {
         });
     }
 
+    /**
+     * 获得角色们拥有的菜单列表，从缓存中获取
+     * 任一参数为空时，则返回为空
+     * @param roleIds 角色编号数组
+     * @param menuTypes 菜单类型数组
+     * @param menusStatuses 菜单状态数组
+     * @return 菜单列表
+     */
     @Override
     public List<MenuDO> getRoleMenuListFromCache(Collection<Long> roleIds, Collection<Integer> menuTypes,
                                                  Collection<Integer> menusStatuses) {
@@ -168,6 +176,12 @@ public class PermissionServiceImpl implements PermissionService {
         return menuService.getMenuListFromCache(menuIds, menuTypes, menusStatuses);
     }
 
+    /**
+     * 获得用户拥有的角色编号集合，从缓存中获取
+     * @param userId 用户编号
+     * @param roleStatuses 角色状态集合. 允许为空，为空时不过滤
+     * @return 角色编号集合
+     */
     @Override
     public Set<Long> getUserRoleIdsFromCache(Long userId, Collection<Integer> roleStatuses) {
         Set<Long> cacheRoleIds = userRoleCache.get(userId);
@@ -186,6 +200,11 @@ public class PermissionServiceImpl implements PermissionService {
         return roleIds;
     }
 
+    /**
+     * 获得角色拥有的菜单编号集合
+     * @param roleId 角色编号
+     * @return 菜单编号集合
+     */
     @Override
     public Set<Long> getRoleMenuIds(Long roleId) {
         // 如果是管理员的情况下，获取全部菜单编号
@@ -196,6 +215,11 @@ public class PermissionServiceImpl implements PermissionService {
         return convertSet(roleMenuMapper.selectListByRoleId(roleId), RoleMenuDO::getMenuId);
     }
 
+    /**
+     * 设置角色菜单
+     * @param roleId 角色编号
+     * @param menuIds 菜单编号集合
+     */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void assignRoleMenu(Long roleId, Set<Long> menuIds) {
@@ -228,18 +252,33 @@ public class PermissionServiceImpl implements PermissionService {
         });
     }
 
+    /**
+     * 获得用户拥有的角色编号集合
+     * @param userId 用户编号
+     * @return 角色编号集合
+     */
     @Override
     public Set<Long> getUserRoleIdListByUserId(Long userId) {
         return convertSet(userRoleMapper.selectListByUserId(userId),
                 UserRoleDO::getRoleId);
     }
 
+    /**
+     * 获得拥有多个角色的用户编号集合
+     * @param roleIds 角色编号集合
+     * @return 用户编号集合
+     */
     @Override
     public Set<Long> getUserRoleIdListByRoleIds(Collection<Long> roleIds) {
         return convertSet(userRoleMapper.selectListByRoleIds(roleIds),
                 UserRoleDO::getUserId);
     }
 
+    /**
+     * 设置用户角色
+     * @param userId 角色编号
+     * @param roleIds 角色编号集合
+     */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void assignUserRole(Long userId, Set<Long> roleIds) {
@@ -272,11 +311,21 @@ public class PermissionServiceImpl implements PermissionService {
         });
     }
 
+    /**
+     * 设置角色的数据权限
+     * @param roleId 角色编号
+     * @param dataScope 数据范围
+     * @param dataScopeDeptIds 部门编号数组
+     */
     @Override
     public void assignRoleDataScope(Long roleId, Integer dataScope, Set<Long> dataScopeDeptIds) {
         roleService.updateRoleDataScope(roleId, dataScope, dataScopeDeptIds);
     }
 
+    /**
+     * 处理角色删除时，删除关联授权数据
+     * @param roleId 角色编号
+     */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void processRoleDeleted(Long roleId) {
@@ -296,6 +345,10 @@ public class PermissionServiceImpl implements PermissionService {
         });
     }
 
+    /**
+     * 处理菜单删除时，删除关联授权数据
+     * @param menuId 菜单编号
+     */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void processMenuDeleted(Long menuId) {
@@ -311,6 +364,10 @@ public class PermissionServiceImpl implements PermissionService {
         });
     }
 
+    /**
+     * 处理用户删除是，删除关联授权数据
+     * @param userId 用户编号
+     */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void processUserDeleted(Long userId) {
@@ -325,6 +382,12 @@ public class PermissionServiceImpl implements PermissionService {
         });
     }
 
+    /**
+     * 判断是否有权限，任一一个即可
+     * @param userId 用户编号
+     * @param permissions 权限
+     * @return 是否
+     */
     @Override
     public boolean hasAnyPermissions(Long userId, String... permissions) {
         // 如果为空，说明已经有权限
@@ -355,6 +418,11 @@ public class PermissionServiceImpl implements PermissionService {
         });
     }
 
+    /**
+     * 判断是否有角色，任一一个即可
+     * @param roles 角色数组
+     * @return 是否
+     */
     @Override
     public boolean hasAnyRoles(Long userId, String... roles) {
         // 如果为空，说明已经有权限
@@ -376,6 +444,11 @@ public class PermissionServiceImpl implements PermissionService {
         return CollUtil.containsAny(userRoles, Sets.newHashSet(roles));
     }
 
+    /**
+     * 获得登陆用户的部门数据权限
+     * @param userId 用户编号
+     * @return 部门数据权限
+     */
     @Override
     @DataPermission(enable = false) // 关闭数据权限，不然就会出现递归获取数据权限的问题
     @TenantIgnore // 忽略多租户的自动过滤。如果不忽略，会导致添加租户时，因为切换租户，导致获取不到 User。即使忽略，本身该方法不存在跨租户的操作，不会存在问题。

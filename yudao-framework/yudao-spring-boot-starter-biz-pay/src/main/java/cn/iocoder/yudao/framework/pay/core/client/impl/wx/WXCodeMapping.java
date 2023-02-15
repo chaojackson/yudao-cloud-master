@@ -12,7 +12,7 @@ import static cn.iocoder.yudao.framework.pay.core.enums.PayFrameworkErrorCodeCon
 /**
  * 微信支付 PayCodeMapping 实现类
  *
- * @author 芋道源码
+ * @author zyc
  */
 public class WXCodeMapping extends AbstractPayCodeMapping {
 

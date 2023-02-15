@@ -16,7 +16,7 @@ import java.util.Objects;
  * 支付宝【手机网站】的 PayClient 实现类
  * 文档：https://opendocs.alipay.com/apis/api_1/alipay.trade.wap.pay
  *
- * @author 芋道源码
+ * @author zyc
  */
 @Slf4j
 public class AlipayWapPayClient extends AbstractAlipayClient {

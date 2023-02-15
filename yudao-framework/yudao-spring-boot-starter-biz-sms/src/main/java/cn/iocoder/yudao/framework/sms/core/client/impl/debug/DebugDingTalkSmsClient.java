@@ -27,7 +27,7 @@ import java.util.Map;
  *
  * 考虑到省钱，我们使用钉钉 WebHook 模拟发送短信，方便调试。
  *
- * @author 芋道源码
+ * @author zyc
  */
 public class DebugDingTalkSmsClient extends AbstractSmsClient {
 
