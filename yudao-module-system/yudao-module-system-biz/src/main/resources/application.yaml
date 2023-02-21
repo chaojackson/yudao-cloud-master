@@ -57,6 +57,7 @@ dubbo:
 spring:
   cloud:
     # Spring Cloud Stream 配置项，对应 BindingServiceProperties 类
+    ## spring.cloud.stream.function.definition  通过function约定的配置，配合函数式编程来实现的 重点说明一下 定义接收者的方法名称很重要，要跟yml里面的function名称一致才行
     stream:
       function:
         definition: smsSendConsumer;mailSendConsumer;
