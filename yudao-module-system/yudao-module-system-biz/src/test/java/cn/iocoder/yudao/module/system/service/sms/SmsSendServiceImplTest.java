@@ -93,6 +93,23 @@ public class SmsSendServiceImplTest extends BaseMockitoUnitTest {
                 eq(template.getChannelId()), eq(template.getApiTemplateId()),
                 eq(Lists.newArrayList(new KeyValue<>("code", "1234"), new KeyValue<>("op", "login"))));
     }
+    /** TODO**/
+    @Test
+    public void testRocketMqMessage(){
+        smsProducer.sendSmsSendMessage(12312321321L, "15922405819",
+                3333333L, "1111111",
+                Lists.newArrayList(new KeyValue<>("code", "1234"), new KeyValue<>("op", "login")));
+    }
+
+
+    @Test
+    public void testRocketMqSendMessage(){
+
+
+        smsProducer.sendSmsSendMessage(randomLongId(), "15922405819",
+                1789270883L, "2312372371",
+              Lists.newArrayList(new KeyValue<>("code", "1234"), new KeyValue<>("op", "login")));
+    }
 
     @Test
     public void testSendSingleSmsToUser() {

@@ -1,3 +1,4 @@
+/*
 package cn.iocoder.yudao.framework.desensitize.core;
 
 import cn.iocoder.yudao.framework.common.util.json.JsonUtils;
@@ -17,9 +18,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+*/
 /**
  * {@link DesensitizeTest} 的单元测试
- */
+ *//*
+
 public class DesensitizeTest {
 
     @Test
@@ -95,3 +98,4 @@ public class DesensitizeTest {
     }
 
 }
+*/

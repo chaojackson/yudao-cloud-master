@@ -1,7 +1,7 @@
 package cn.iocoder.yudao.module.system.mq;
 
 import cn.hutool.core.thread.ThreadUtil;
-import cn.iocoder.yudao.framework.mq.core.RedisMQTemplate;
+/*import cn.iocoder.yudao.framework.mq.core.RedisMQTemplate;*/
 import cn.iocoder.yudao.module.system.mq.consumer.mail.MailSendConsumer;
 import cn.iocoder.yudao.module.system.mq.consumer.sms.SmsSendConsumer;
 import cn.iocoder.yudao.module.system.mq.message.mail.MailSendMessage;
@@ -23,7 +23,7 @@ public class RedisStreamTest  {
 
         @Test
         public void testConsumer() {
-            ThreadUtil.sleep(1, TimeUnit.DAYS);
+            ThreadUtil.sleep(1, TimeUnit.SECONDS);
         }
 
     }
@@ -31,8 +31,8 @@ public class RedisStreamTest  {
     @Disabled
     public static class ProducerTest extends BaseRedisIntegrationTest {
 
-        @Resource
-        private RedisMQTemplate redisMQTemplate;
+       /* @Resource
+        private RedisMQTemplate redisMQTemplate;*/
 
         @Resource
         private RedisTemplate<String, Object> redisTemplate;
@@ -44,7 +44,7 @@ public class RedisStreamTest  {
                 SmsSendMessage message = new SmsSendMessage();
                 message.setMobile("15601691300").setApiTemplateId("test:" + i);
                 // 发送消息
-                redisMQTemplate.send(message);
+              /*  redisMQTemplate.send(message);*/
             }
         }
 
@@ -52,9 +52,9 @@ public class RedisStreamTest  {
         public void testProducer02() {
             // 创建消息
             MailSendMessage message = new MailSendMessage();
-            message.setAddress("fangfang@mihayou.com").setTemplateCode("test");
+           /* message.setAddress("fangfang@mihayou.com").setTemplateCode("test");
             // 发送消息
-            redisMQTemplate.send(message);
+            redisMQTemplate.send(message);*/
         }
 
     }

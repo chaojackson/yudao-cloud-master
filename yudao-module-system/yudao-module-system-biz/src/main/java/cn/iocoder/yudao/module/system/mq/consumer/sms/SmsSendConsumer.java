@@ -22,7 +22,8 @@ public class SmsSendConsumer implements Consumer<SmsSendMessage> {
 
     @Override
     public void accept(SmsSendMessage message) {
-        log.info("[accept][消息内容({})]", message);
-        smsSendService.doSendSms(message);
+        log.info("[accept][消息内容({})]=========>>>>SmsSendConsumer", message);
+        /**TODO 暂时先注释**/
+        /*smsSendService.doSendSms(message);*/
     }
 }

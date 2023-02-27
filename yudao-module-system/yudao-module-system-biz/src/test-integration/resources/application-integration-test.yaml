@@ -62,7 +62,7 @@ spring:
     host: 127.0.0.1 # 地址
     port: 6379 # 端口
     database: 0 # 数据库索引
-
+    password: wondertek#2023@redis # 密码，建议生产环境开启
 mybatis:
   lazy-initialization: true # 单元测试，设置 MyBatis Mapper 延迟加载，加速每个单元测试
 

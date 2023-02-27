@@ -161,7 +161,13 @@ public class SmsSendServiceImpl implements SmsSendService {
     public void doSendSms(SmsSendMessage message) {
         // 获得渠道对应的 SmsClient 客户端
         SmsClient smsClient = smsClientFactory.getSmsClient(message.getChannelId());
+
+        /** 判断传进来的参数值是否不为空值，如果为空就抛出异常throw new IllegalArgumentException(msg)，
+         * 代码如果不捕捉处理这个异常，代码不往下执行，不为空代码继续向下执行。
+         **/
         Assert.notNull(smsClient, "短信客户端({}) 不存在", message.getChannelId());
+
+
         // 发送短信
         SmsCommonResult<SmsSendRespDTO> sendResult = smsClient.sendSms(message.getLogId(), message.getMobile(),
                 message.getApiTemplateId(), message.getTemplateParams());

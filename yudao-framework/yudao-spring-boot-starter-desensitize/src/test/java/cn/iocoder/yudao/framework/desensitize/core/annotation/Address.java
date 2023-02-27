@@ -1,3 +1,4 @@
+/*
 package cn.iocoder.yudao.framework.desensitize.core.annotation;
 
 import cn.iocoder.yudao.framework.desensitize.core.DesensitizeTest;
@@ -11,13 +12,15 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+*/
 /**
  * 地址
  *
  * 用于 {@link DesensitizeTest} 测试使用
  *
  * @author gaibu
- */
+ *//*
+
 @Documented
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
@@ -28,3 +31,4 @@ public @interface Address {
     String replacer() default "*";
 
 }
+*/

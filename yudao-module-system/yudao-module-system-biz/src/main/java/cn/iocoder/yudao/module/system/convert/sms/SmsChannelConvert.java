@@ -14,12 +14,12 @@ import java.util.List;
 
 /**
  * 短信渠道 Convert
- *
+ *      声明MapperStruct Mapper映射器
  * @author zyc
  */
 @Mapper
 public interface SmsChannelConvert {
-
+    /** https://www.iocoder.cn/Spring-Boot/MapStruct/?yudao **/
     SmsChannelConvert INSTANCE = Mappers.getMapper(SmsChannelConvert.class);
 
     SmsChannelDO convert(SmsChannelCreateReqVO bean);
